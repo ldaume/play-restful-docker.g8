@@ -1,5 +1,5 @@
 # Abstract
-A RESTful java [Play](https://www.playframework.com/) 2.4.3 [template](https://www.typesafe.com/activator/template/play-hibernate) with Docker.
+A RESTful java [Play](https://www.playframework.com/) 2.4.3 [template](https://www.typesafe.com/activator/template/play-restful-docker) with Docker.
 
 ## Usage
 `activator new PROJECTNAME play-restful-docker`
