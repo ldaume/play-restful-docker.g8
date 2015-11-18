@@ -1,11 +1,11 @@
 # Abstract
-A java [Play](https://www.playframework.com/) 2.4.3 [template](https://www.typesafe.com/activator/template/play-hibernate) with Hibernate.
+A RESTful java [Play](https://www.playframework.com/) 2.4.3 [template](https://www.typesafe.com/activator/template/play-hibernate) with Docker.
 
 ## Usage
-`activator new PROJECTNAME play-hibernate`
+`activator new PROJECTNAME play-restful-docker`
 
 ## Introduction
-A starting template if you want to develop a RESTfull micro service with docker.
+A starting template if you want to develop a RESTful micro service with docker.
 
 Then, we have the following objectives:
 
