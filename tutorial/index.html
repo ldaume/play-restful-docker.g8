@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>
+        A RESTfull starter application with Play 2.4.3 (Java).
+    </title>
+</head>
+<body>
+<div>
+    <h2>Introduction</h2>
+
+    <p>
+        A starting template if you want to develop a RESTfull micro service with docker.
+    </p>
+
+    <p>Then, we have the following objectives:</p>
+
+    <ul>
+        <li>
+            Development should be simple. <code>activator run</code> should be enough
+            to run all services at the same time.
+        </li>
+        <li>Common code, dependencies and modules should be easily shared.</li>
+        <li>
+            We should be able to compile, test and run each service separately in
+            development and production.
+        </li>
+        <li>We should distribute each service separately.</li>
+        <li>It should be a template ready to use with the following features:
+            <ul>
+                <li>Dependency Injection with Guice</li>
+                <li>Dockerizable</li>
+            </ul>
+        </li>
+        <li>It shoud explain:
+            <ul>
+                <li>How to use it for development, test and production.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div>
+    <h2>Binding</h2>
+
+    <p>This template uses the dependency injected router <a href="https://www.playframework.com/documentation/2.4.x/JavaRouting#Dependency-Injection" class="shortcut">Dependency Injection</a>
+        So, every route starts with an @ like <code>@controllers.Application.index()</code> which leads to non-static actions.
+</div>
+<div>
+    <h2>Logging</h2>
+
+    <p>
+        The logger is configured for a better output and contains a rolling file appender.
+        The logs are look like
+        <code>2015-08-17 10:21:17,914 INFO [ForkJoinPool-1-worker-3] application: Class::Method:#Line - Message</code>.
+    </p>
+</div>
+</body>
+</html>
