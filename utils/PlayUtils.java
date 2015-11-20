@@ -2,25 +2,36 @@ package utils;
 
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.lang3.StringUtils;
+import play.Logger;
 import play.Play;
 import play.libs.Json;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.StringUtils.repeat;
 import static play.Logger.info;
 
 /**
- * Created by Leonard Daume on 18.11.2015.
+ * Some helping methods and constants for Play!
+ * <p>
+ * Created by leonard on 16.11.15.
  */
-public final class PlayUtils {
+public class PlayUtils {
 
   public static final void logConfig() {
     printEnvs();
     sleepQuietly();
-    printUsedConfig();
+    try {
+      printUsedConfig();
+    } catch (Exception e) {
+      Logger.error("Could not log current configs.", e);
+    }
     sleepQuietly();
   }
 
@@ -44,6 +55,15 @@ public final class PlayUtils {
 
   private static void printUsedConfig() {
     String config = System.getProperty("config.resource", "application.conf");
+    info("Will use config file {} of {}.",
+         config,
+         FileUtils.listFiles(Play.application().getFile("/conf"),
+                             FileFilterUtils.suffixFileFilter(".conf"),
+                             null)
+                  .stream()
+                  .map(File::getName)
+                  .sorted()
+                  .collect(Collectors.toSet()));
     final StringBuilder configPrinter = startConfigPrinter("Config file: (" + config + ")");
     Properties loadedConfigFile = new Properties();
     try {
@@ -81,5 +101,9 @@ public final class PlayUtils {
     text.append("\t│" + repeat(" ", 68) + "┊\n");
     text.append("\t╰" + repeat("─", 68) + "╯\n");
     return text;
+  }
+
+  private PlayUtils() {
+    throw new UnsupportedOperationException();
   }
 }
