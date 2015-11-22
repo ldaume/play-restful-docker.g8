@@ -20,6 +20,9 @@ libraryDependencies ++= Seq(
   "org.apache.commons" % "commons-collections4" % "4.0",
   "commons-io" % "commons-io" % "2.4",
   
+  // Json
+  "com.jayway.jsonpath" % "json-path" % "2.0.0",
+  
   // Testing
   "org.assertj" % "assertj-core" % "3.1.0" % "test"
 )
