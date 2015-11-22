@@ -13,8 +13,15 @@ resolvers += Resolver.mavenLocal
 libraryDependencies ++= Seq(
   cache,
   javaWs,
-  "org.assertj" % "assertj-core" % "3.1.0" % "test",
-  "org.apache.commons" % "commons-lang3" % "3.4"
+  
+  // Commons
+  "org.apache.commons" % "commons-lang3" % "3.4",
+  "com.google.guava" % "guava" % "19.0-rc2",
+  "org.apache.commons" % "commons-collections4" % "4.0",
+  "commons-io" % "commons-io" % "2.4",
+  
+  // Testing
+  "org.assertj" % "assertj-core" % "3.1.0" % "test"
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
