@@ -1,3 +1,4 @@
+import com.typesafe.sbt.packager.docker._
 name := """play-restful-docker"""
 
 version := "1.0-SNAPSHOT"
@@ -34,7 +35,14 @@ routesGenerator := InjectedRoutesGenerator
 // --------------------
 // ------ DOCKER ------
 // --------------------
-// build with activator:publishLocal
+// build with activator docker:publishLocal
+
+// change to smaller base image
+dockerBaseImage := "frolvlad/alpine-oraclejdk8:latest"
+dockerCommands := dockerCommands.value.flatMap {
+  case cmd@Cmd("FROM", _) => List(cmd, Cmd("RUN", "apk update && apk add bash"))
+  case other => List(other)
+}
 
 // setting a maintainer which is used for all packaging types</pre>
 maintainer := "Me"
