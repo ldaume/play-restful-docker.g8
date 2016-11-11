@@ -1,5 +1,5 @@
 # Abstract
-A RESTful java [Play](https://www.playframework.com/) 2.4.6 [template](https://www.typesafe.com/activator/template/play-restful-docker) with Docker.
+A RESTful java [Play](https://www.playframework.com/) 2.5.9 [template](https://www.typesafe.com/activator/template/play-restful-docker) with Docker.
 
 ## Usage
 `activator new PROJECTNAME play-restful-docker`
@@ -21,7 +21,7 @@ Then, we have the following objectives:
     * How to use it for development, test and production.
 
 ## Binding
-This template uses the dependency injected router [Dependency Injection](https://www.playframework.com/documentation/2.4.x/JavaRouting)
+This template uses the dependency injected router [Dependency Injection](https://www.playframework.com/documentation/2.5.x/JavaRouting)
 ## Dependency-Injection
 So, every route starts with an @ like `@controllers.Application.index()` which leads to non-static actions.
 
