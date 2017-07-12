@@ -1,8 +1,8 @@
 # Abstract
-A RESTful java [Play](https://www.playframework.com/) 2.5.9 [template](https://www.typesafe.com/activator/template/play-restful-docker) with Docker.
+A RESTful java [Play](https://www.playframework.com/) 2.5.9 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
 
 ## Usage
-`activator new PROJECTNAME play-restful-docker`
+`sbt new ldaume/play-restful-docker.g8 --name=play-restful-docker`
 
 ## Introduction
 A starting template if you want to develop a RESTful micro service with docker.
