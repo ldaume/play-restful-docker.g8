@@ -2,7 +2,7 @@
 A RESTful java [Play](https://www.playframework.com/) 2.5.9 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
 
 ## Usage
-`sbt new ldaume/play-restful-docker.g8 --name=play-restful-docker`
+`sbt new ldaume/play-restful-docker.g8`
 
 ## Introduction
 A starting template if you want to develop a RESTful micro service with docker.
