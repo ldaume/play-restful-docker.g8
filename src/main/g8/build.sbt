@@ -1,8 +1,8 @@
 import com.typesafe.sbt.packager.docker._
 
-name := """play-restful-docker"""
-
-version := "0.1.0-SNAPSHOT"
+name := "$name$"
+organization := "$organization$",
+version := "$version$"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava, JavaAppPackaging, DockerPlugin)
 
