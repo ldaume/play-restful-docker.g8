@@ -1,3 +1,10 @@
+| Dependencies UpToDate | License |
+|:---------------------:|:-------:|
+| [![Dependencies UpToDate](https://ci.reinvent-software.de/buildStatus/icon?job=play-restful-docker-template-DependencyCheck)](https://ci.reinvent-software.de/job/play-restful-docker-template-DependencyCheck) | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) |
+
+Play RESTful Docker
+================
+
 # Abstract
 A RESTful java [Play](https://www.playframework.com/) 2.5.9 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
 
