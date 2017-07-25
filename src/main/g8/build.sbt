@@ -1,7 +1,7 @@
 import com.typesafe.sbt.packager.docker._
 
 name := "$name$"
-organization := "$organization$",
+organization := "$organization$"
 version := "$version$"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava, JavaAppPackaging, DockerPlugin)
