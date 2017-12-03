@@ -16,7 +16,7 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 resolvers += "ldaume OSS Public" at "https://maven.reinvent-software.de/nexus/content/repositories/public"
 
 libraryDependencies ++= Seq(
-  cache,
+  ehcache,
   javaWs,
 
   // Commons
