@@ -8,7 +8,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava, JavaAppPackaging,
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.4"
 
 resolvers += Resolver.mavenLocal
 resolvers += Resolver.jcenterRepo
@@ -20,17 +20,17 @@ libraryDependencies ++= Seq(
   javaWs,
 
   // Commons
-  "org.apache.commons" % "commons-lang3" % "3.5",
-  "com.google.guava" % "guava" % "20.0",
+  "org.apache.commons" % "commons-lang3" % "3.7",
+  "com.google.guava" % "guava" % "23.5-jre",
   "org.apache.commons" % "commons-collections4" % "4.1",
-  "commons-io" % "commons-io" % "2.5",
-  "org.unbescape" % "unbescape" % "1.1.4.RELEASE",
+  "commons-io" % "commons-io" % "2.6",
+  "org.unbescape" % "unbescape" % "1.1.5.RELEASE",
 
   // Json
-  "com.jayway.jsonpath" % "json-path" % "2.2.0",
+  "com.jayway.jsonpath" % "json-path" % "2.4.0",
 
   // Testing
-  "org.assertj" % "assertj-core" % "3.5.2" % "test",
+  "org.assertj" % "assertj-core" % "3.8.0" % "test",
   "org.assertj" % "assertj-guava" % "3.1.0" % "test" exclude("com.google.guava", "guava")
 )
 
