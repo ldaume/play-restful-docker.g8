@@ -44,6 +44,8 @@ initialize := {
     sys.error("Java 8 is required for this project.")
 }
 
+dependencyUpdatesFailBuild := true
+
 // --------------------
 // ------ DOCKER ------
 // --------------------
