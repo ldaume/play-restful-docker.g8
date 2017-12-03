@@ -45,6 +45,7 @@ initialize := {
 }
 
 dependencyUpdatesFailBuild := true
+dependencyUpdatesFilter -= moduleFilter(name = "sbt-twirl") | moduleFilter(name = "twirl-api") 
 
 // --------------------
 // ------ DOCKER ------
