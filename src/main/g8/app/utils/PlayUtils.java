@@ -76,7 +76,7 @@ public final class PlayUtils {
         .forEach(
             key -> {
               try {
-                addKeyValue(configPrinter, key, ctx.read(join("$.", key)));
+                addKeyValue(configPrinter, key, ctx.read(join("$$.", key)));
               } catch (Exception e) {
                 addKeyValue(configPrinter, key, " = n/a");
               }
