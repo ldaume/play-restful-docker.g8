@@ -1,24 +1,24 @@
 package lifecycle;
 
-import static com.jayway.jsonpath.JsonPath.parse;
+import static java.lang.Character.isLetter;
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;
 import static java.lang.Thread.sleep;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.commons.lang3.StringUtils.join;
 import static org.apache.commons.lang3.StringUtils.repeat;
 import static org.apache.commons.lang3.StringUtils.rightPad;
+import static org.apache.commons.lang3.StringUtils.trimToEmpty;
 import static play.Logger.info;
-import static play.libs.Json.toJson;
 
 import com.google.inject.Inject;
-import com.jayway.jsonpath.DocumentContext;
 import com.typesafe.config.Config;
 import java.io.IOException;
 import java.util.Properties;
 import play.Application;
 
 /**
- * Some helping methods for play.
+ * Print Play config.
  *
  * <p>Created by Leonard Daume on 18.11.2015.
  */
@@ -37,7 +37,7 @@ public final class PlayUtils {
   private void logConfig() {
     printEnvs();
     sleepQuietly();
-    printUsedConfig();
+    printConfig();
     sleepQuietly();
   }
 
@@ -50,7 +50,7 @@ public final class PlayUtils {
   }
 
   private void printEnvs() {
-    final StringBuilder configPrinter = startConfigPrinter("Environment variables");
+    var configPrinter = startConfigPrinter("Environment variables");
     getenv()
         .keySet()
         .stream()
@@ -59,24 +59,28 @@ public final class PlayUtils {
     info(withFooter(configPrinter).toString());
   }
 
-  private void printUsedConfig() {
-    String config = getProperty("config.resource", "application.conf");
-    final StringBuilder configPrinter = startConfigPrinter(join("Config file: (", config, ")"));
-    Properties loadedConfigFile = new Properties();
+  private void printConfig() {
+    var configFile = getProperty("config.resource", "application.conf");
+    var configPrinter = startConfigPrinter(join("Config file: (", configFile, ")"));
+
+    var loadedConfigFile = new Properties();
     try {
-      loadedConfigFile.load(application.classloader().getResourceAsStream(config));
+      loadedConfigFile.load(application.classloader().getResourceAsStream(configFile));
     } catch (IOException e) {
       //
     }
-    DocumentContext ctx = parse(toJson(config.toString()));
+
     loadedConfigFile
         .keySet()
         .stream()
+        .filter(key -> key instanceof String)
+        .map(key -> trimToEmpty((String) key))
+        .filter(key -> isNotBlank(key) && isLetter(key.charAt(0)))
         .sorted()
         .forEach(
             key -> {
               try {
-                addKeyValue(configPrinter, key, ctx.read(join("\$.", key)));
+                addKeyValue(configPrinter, key, this.config.getValue(key).unwrapped());
               } catch (Exception e) {
                 addKeyValue(configPrinter, key, " = n/a");
               }
@@ -86,7 +90,7 @@ public final class PlayUtils {
 
   private StringBuilder startConfigPrinter(final String title) {
 
-    final StringBuilder text = new StringBuilder(join("\n\t╭", repeat("─", 68), "╮\n"));
+    var text = new StringBuilder(join("\n\t╭", repeat("─", 68), "╮\n"));
     text.append(join(rightPad(join("\t│    ", title, ": "), 70, " "), "│\n"));
     text.append(join("\t╞════", repeat("═", 60), "════╡\n"));
     text.append(join("\t│", repeat(" ", 68), "┊\n"));
