@@ -2,6 +2,7 @@ package controllers;
 
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
+import com.google.inject.Inject;
 import com.typesafe.config.Config;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
