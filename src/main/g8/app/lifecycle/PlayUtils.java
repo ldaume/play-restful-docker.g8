@@ -1,4 +1,4 @@
-package utils;
+package lifecycle;
 
 import static com.jayway.jsonpath.JsonPath.parse;
 import static java.lang.System.getProperty;
@@ -68,7 +68,7 @@ public final class PlayUtils {
     } catch (IOException e) {
       //
     }
-    DocumentContext ctx = parse(toJson(config));
+    DocumentContext ctx = parse(toJson(config.toString()));
     loadedConfigFile
         .keySet()
         .stream()

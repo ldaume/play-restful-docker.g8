@@ -4,3 +4,5 @@
 
 # Home page
 GET     /                           @controllers.Application.index()
+
+GET     /heartbeat                  @controllers.Application.heartbeat()
