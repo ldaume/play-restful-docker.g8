@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "javax.xml.bind" % "jaxb-api" % "2.3.0",
 
   // Testing
-  "org.assertj" % "assertj-core" % "3.10.0" % "test",
+  "org.assertj" % "assertj-core" % "3.11.1" % "test",
   "org.assertj" % "assertj-guava" % "3.2.0" % "test" exclude("com.google.guava", "guava")
 )
 

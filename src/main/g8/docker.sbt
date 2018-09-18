@@ -1,5 +1,12 @@
+import java.io.File
+
 import com.typesafe.sbt.packager.docker._
-// build with sbt docker:publish[Local]
+// build with sbt docker:publish
+
+
+import com.typesafe.config.ConfigFactory
+
+val conf = ConfigFactory.parseFile(new File("conf/application.conf")).resolve()
 
 // change to smaller base image
 dockerBaseImage := "openjdk:11-jre-slim-sid"
@@ -10,12 +17,13 @@ dockerCommands := dockerCommands.value.flatMap {
     Cmd("RUN", "apt-get update -y && apt-get install -y bash tzdata bzip2 unzip xz-utils curl"),
     Cmd("ENV", "TZ \"Europe/Berlin\""),
     Cmd("RUN", "echo \"\${TZ}\" > /etc/timezone"),
-    Cmd("HEALTHCHECK", "--start-period=2m CMD curl --fail http://localhost:9000/heartbeat || exit" +
+    Cmd("HEALTHCHECK", "--start-period=2m CMD curl --fail http://localhost:" + conf.getString("http.port") + "/heartbeat || exit" +
       " 1")
   )
   case other => List(other)
 }
 
+dockerBuildOptions += "--no-cache"
 
 // setting a maintainer which is used for all packaging types</pre>
 maintainer := "Me"
