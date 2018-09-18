@@ -7,6 +7,9 @@ val conf = ConfigFactory.parseFile(new File("conf/application.conf")).resolve()
 
 val appName = conf.getString("app.name")
 val appVersion = conf.getString("app.version")
+val appPort = conf.getString("http.port")
+
+PlayKeys.devSettings := Seq("play.server.http.port" -> appPort)
 
 name := appName
 version := appVersion
