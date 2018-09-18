@@ -6,7 +6,7 @@ Play RESTful Docker
 ================
 
 # Abstract
-A RESTful java 11 [Play](https://www.playframework.com/) 2.6.14 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
+A RESTful java 11 [Play](https://www.playframework.com/) 2.6.19 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
 
 ## Usage
 `sbt new ldaume/play-restful-docker.g8`
