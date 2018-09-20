@@ -1,7 +1,7 @@
 package controllers.auth;
 
 import com.google.common.io.BaseEncoding;
-import com.google.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.commons.lang3.StringUtils;
 

@@ -1,6 +1,6 @@
 package controllers;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
 import com.typesafe.config.Config;
 import java.util.concurrent.CompletionStage;
 import play.libs.concurrent.HttpExecutionContext;

@@ -11,7 +11,7 @@ import static org.apache.commons.lang3.StringUtils.rightPad;
 import static org.apache.commons.lang3.StringUtils.trimToEmpty;
 import static play.Logger.info;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
 import com.typesafe.config.Config;
 import java.io.IOException;
 import java.util.Properties;

@@ -1,7 +1,7 @@
 package modules;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.Inject;
+import javax.inject.Inject;
 import com.typesafe.config.Config;
 import lifecycle.PlayUtils;
 import play.Environment;
