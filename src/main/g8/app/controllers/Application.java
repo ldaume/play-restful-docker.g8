@@ -1,8 +1,8 @@
 package controllers;
 
-import javax.inject.Inject;
 import com.typesafe.config.Config;
 import java.util.concurrent.CompletionStage;
+import javax.inject.Inject;
 import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Result;
 import play.mvc.Results;
@@ -19,6 +19,6 @@ public class Application extends GenericController {
   }
 
   public CompletionStage<Result> heartbeat() {
-    return result(Results::ok);
+    return result(() -> ok("OK"));
   }
 }
