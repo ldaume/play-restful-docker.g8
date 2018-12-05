@@ -22,8 +22,6 @@ libraryDependencies ++= Seq(
   "javax.xml.bind" % "jaxb-api" % "2.3.0",
 
   // Testing
-  "com.novocode" % "junit-interface" % "0.11" % Test,
-  "org.junit.jupiter" % "junit-jupiter-api" % "5.3.2" % Test,
   "org.assertj" % "assertj-core" % "3.11.1" % Test,
   "org.assertj" % "assertj-guava" % "3.2.1" % Test exclude("com.google.guava", "guava"),
   "net.javacrumbs.json-unit" % "json-unit" % "2.1.1" % Test,

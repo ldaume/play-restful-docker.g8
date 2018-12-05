@@ -30,3 +30,5 @@ initialize := {
   if (sys.props("java.specification.version") != "11")
     sys.error("Java 11 is required for this project. Found " + sys.props("java.specification.version"))
 }
+
+testOptions += Tests.Argument(jupiterTestFramework, "-q", "-v")

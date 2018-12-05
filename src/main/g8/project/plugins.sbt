@@ -2,6 +2,7 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 resolvers += Resolver.bintrayIvyRepo("rtimush", "sbt-plugin-snapshots")
 resolvers += Resolver.bintrayIvyRepo("lolhens", "sbt-plugins")
 resolvers += Resolver.sonatypeRepo("releases")
+resolvers += Resolver.jcenterRepo
 sbtPlugin := true
 
 // The Play plugin
@@ -23,3 +24,6 @@ addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.5-5+g017b7e0")
 addSbtPlugin("au.com.onegeek" %% "sbt-dotenv" % "1.2.88")
 
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.9.0")
+
+
+addSbtPlugin("net.aichler" % "sbt-jupiter-interface" % "0.7.0")
