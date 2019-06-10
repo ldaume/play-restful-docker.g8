@@ -8,15 +8,14 @@ import com.typesafe.config.ConfigFactory
 
 val conf = ConfigFactory.parseFile(new File("conf/application.conf")).resolve()
 
-// change to smaller base image
-dockerBaseImage := "openjdk:11-jre-slim-sid"
-
+// java 12
+dockerBaseImage := "openjdk:12"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@Cmd("FROM", _) => List(cmd,
-    Cmd("RUN", "apt-get update -y && apt-get install -y bash tzdata bzip2 unzip xz-utils curl"),
-    Cmd("ENV", "TZ \"Europe/Berlin\""),
-    Cmd("RUN", "echo \"\${TZ}\" > /etc/timezone"),
+    Cmd("RUN", "yum update -y && yum install -y bash tzdata bzip2 unzip xz-utils curl"),
+    Cmd("RUN", "rm -rf /etc/localtime"),
+    Cmd("RUN", "ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime"),
     Cmd("HEALTHCHECK", "--start-period=2m CMD curl --fail http://localhost:" + conf.getString("http.port") + "/heartbeat || exit" +
       " 1")
   )
