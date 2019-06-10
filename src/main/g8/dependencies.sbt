@@ -27,3 +27,4 @@ libraryDependencies ++= Seq(
 
 dependencyUpdatesFailBuild := true
 
+dependencyUpdatesFilter -= moduleFilter(name = "scala-library")
