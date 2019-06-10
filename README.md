@@ -6,7 +6,7 @@ Play RESTful Docker
 ================
 
 # Abstract
-A RESTful java 11 [Play](https://www.playframework.com/) 2.6.20 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
+A RESTful java 12 [Play](https://www.playframework.com/) 2.7.2 [Giter8](http://www.foundweekends.org/giter8/) template with Docker.
 
 ## Usage
 `sbt new ldaume/play-restful-docker.g8`
@@ -28,7 +28,7 @@ Then, we have the following objectives:
     * How to use it for development, test and production.
 
 ## Binding
-This template uses the dependency injected router [Dependency Injection](https://www.playframework.com/documentation/2.5.x/JavaRouting)
+This template uses the dependency injected router [Dependency Injection](https://www.playframework.com/documentation/2.7.x/JavaRouting)
 ## Dependency-Injection
 So, every route starts with an @ like `@controllers.Application.index()` which leads to non-static actions.
 
