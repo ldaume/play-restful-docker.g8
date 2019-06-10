@@ -19,7 +19,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava, JavaAppPackaging,
 
 javacOptions ++= Seq("-source", "12", "-target", "12")
 
-scalaVersion := "2.13.0"
+scalaVersion := "2.12.8"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
