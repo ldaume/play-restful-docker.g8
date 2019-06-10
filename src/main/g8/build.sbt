@@ -17,7 +17,7 @@ organization := "$organization$"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava, JavaAppPackaging, DockerPlugin)
 
-javacOptions ++= Seq("-source", "11", "-target", "11")
+javacOptions ++= Seq("-source", "12", "-target", "12")
 
 scalaVersion := "2.13.0"
 
@@ -27,8 +27,8 @@ routesGenerator := InjectedRoutesGenerator
 
 initialize := {
   val _ = initialize.value
-  if (sys.props("java.specification.version") != "11")
-    sys.error("Java 11 is required for this project. Found " + sys.props("java.specification.version"))
+  if (sys.props("java.specification.version") != "12")
+    sys.error("Java 12 is required for this project. Found " + sys.props("java.specification.version"))
 }
 
 testOptions += Tests.Argument(jupiterTestFramework, "-q", "-v")
