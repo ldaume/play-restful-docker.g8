@@ -5,7 +5,8 @@ libraryDependencies ++= Seq(
   javaWs,
 
   // Commons
-  "software.reinvent" % "commons" % "0.3.12",
+  "software.reinvent" % "commons" % "0.3.12",  
+  "org.projectlombok" % "lombok" % "1.18.8" % "provided",
 
   // Json
   "com.jayway.jsonpath" % "json-path" % "2.4.0",
